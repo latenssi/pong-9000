@@ -1,28 +1,27 @@
 ﻿#pragma strict
 
-function Start () {
-
-}
+public var speed : int;
 
 function Update () {
 
     if (Input.GetKey ("up")) 
         {
-        gameObject.y++;
-        }
+        transform.Translate(Vector2.up * Time.deltaTime * speed);
+    }
 
     if (Input.GetKey ("down")) 
-        {
-        gameObject.y--;
-        }
+    {
+        transform.Translate(Vector2.down * Time.deltaTime * speed);
+    }
 
     if (Input.GetKey ("left")) 
-        {
-        gameObject.x--;
-        }
+    {
+        transform.Translate(Vector2.left * Time.deltaTime * speed);
+    }
 
     if (Input.GetKey ("right")) 
-        {
-        gameObject.x++;
-        }
+    {
+        transform.Translate(Vector2.right * Time.deltaTime * speed);
+    }
+
 }
