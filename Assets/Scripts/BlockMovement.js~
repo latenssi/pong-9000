@@ -1,0 +1,10 @@
+﻿#pragma strict
+var downSpeed : float;
+
+function Start () {
+
+}
+
+function Update () {
+gameObject.transform.position.y -= downSpeed;
+}
