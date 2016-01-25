@@ -6,18 +6,19 @@ public static var DISCRETE_LEFT : float = -1;
 public static var DISCRETE_RIGHT : float = 1;
 public static var DISCRETE_STOP  : float = 0;
 
+public var baseSpeed : int;
+
 private var speed : int;
 private var rb : Rigidbody;
 private var vertical : int;
 private var horizontal : int;
 
 function Start() {
-    speed = 20;
+    speed = baseSpeed;
     vertical = 0;
     horizontal = 0;
     rb = GetComponent(Rigidbody);
 }
-
 
 function FixedUpdate() {
     rb.velocity.y = vertical * speed;
