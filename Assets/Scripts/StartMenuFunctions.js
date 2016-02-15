@@ -5,6 +5,11 @@ public var levelToLoad : int;
 function startgame ()
 {
   // START THE GAME: LOAD LEVEL X
-  //UnityEngine.SceneManagement.SceneManager.LoadScene(levelToLoad);
+  Time.timeScale = 1.0F;
   Application.LoadLevel("LV1");
+}
+
+function exitgame ()
+{
+  Application.Quit();
 }

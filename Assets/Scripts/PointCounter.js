@@ -44,5 +44,5 @@ function pauseGame ()
 function restartGame ()
 {
   Time.timeScale = 1.0F;
-  Application.LoadLevel(0);
+  Application.LoadLevel("LV1");
 }
