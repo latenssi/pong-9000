@@ -21,14 +21,14 @@ function Update () {
   	// CREATE BLOCK AT POSITION Random.Range(-10.0, 10.0)
     randomNumber = Random.Range(1, powerup1rarity + powerup2rarity + powerup3rarity + 1);
     if(randomNumber <= powerup1rarity)
-    {Instantiate(powerup1, gameObject.transform.position, Quaternion.identity);}
+    {Instantiate(powerup1, gameObject.transform.position, powerup1.transform.rotation);}
 
     else if(randomNumber > powerup1rarity && randomNumber <= powerup1rarity + powerup2rarity)
-    {Instantiate(powerup2, gameObject.transform.position, Quaternion.identity);}
+    {Instantiate(powerup2, gameObject.transform.position, powerup2.transform.rotation);}
 
     else if (randomNumber > powerup1rarity + powerup2rarity && powerup1rarity + powerup2rarity + powerup3rarity)
-    {Instantiate(powerup3, gameObject.transform.position, Quaternion.identity);}
-    
+    {Instantiate(powerup3, gameObject.transform.position, powerup3.transform.rotation);}
+
     else {Debug.Log("INCORRECT NUMBER");}
   	}
 }
