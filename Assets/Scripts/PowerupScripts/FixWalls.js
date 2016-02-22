@@ -13,12 +13,12 @@ function OnCollisionEnter (collision: Collision) {
 
 	if (lastplayerhit == 1)
 		{
-		Debug.Log("FIX RIGHT WALL");
-		WallSpawnerRight.GetComponent(CreateWall).CreateWall();
+		Debug.Log("FIX LEFT WALL");
+		WallSpawnerLeft.GetComponent(CreateWall).CreateWall();
 		};
 	if (lastplayerhit == 2)
 		{
-		Debug.Log("FIX LEFT WALL");
-		WallSpawnerLeft.GetComponent(CreateWall).CreateWall();
+		Debug.Log("FIX RIGHT WALL");
+		WallSpawnerRight.GetComponent(CreateWall).CreateWall();
 		};
 }
