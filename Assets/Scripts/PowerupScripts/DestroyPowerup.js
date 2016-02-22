@@ -1,8 +1,8 @@
 ﻿#pragma strict
+public var DestroyDelay : int;
 
-function OnCollisionEnter(collision: Collision) {
-    if (collision.gameObject.tag == 'Ball')
-        DestroyThis();
+function Start () {
+  Invoke("DestroyThis", DestroyDelay);
 }
 
 function DestroyThis () {

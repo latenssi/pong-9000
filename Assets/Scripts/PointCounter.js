@@ -9,6 +9,7 @@ private var gameEnded = false;
 private var whoWonText : UnityEngine.UI.Text;
 
 function Start () {
+  Time.timeScale = 1.0F;
   whoWonText = whoWon.GetComponent(UnityEngine.UI.Text);
   whoWonText.text = "";
 }

@@ -8,7 +8,7 @@ private var rb : Rigidbody;
 private var pointCounter : PointCounter;
 
 function Start() {
-  ball = GameObject.Find("Ball");
+  //ball = GameObject.Find("Ball");
   pointhandler = GameObject.Find("PointHandler");
   rb = GetComponent(Rigidbody);
   pointCounter = pointhandler.GetComponent(PointCounter);
@@ -20,7 +20,7 @@ function FixedUpdate () {
 
   if (Mathf.Abs(positionX) >= maxX) {
       // CHECK WHICH END BALL IS IN
-      if (ball.transform.position.x < 0) {
+      if (gameObject.transform.position.x < 0) {
         Debug.Log("PLAYER 2 POINT");
         pointCounter.player2Points++;
       }

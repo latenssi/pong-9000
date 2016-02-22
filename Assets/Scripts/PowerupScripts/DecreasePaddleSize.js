@@ -4,27 +4,27 @@ private var player1paddle : GameObject;
 private var player2paddle : GameObject;
 private var duration : int;
 
-function Start () 
+function Start ()
 {
-player1paddle = gameObject.Find("Player1");
-player2paddle = gameObject.Find("Player2");
+player1paddle = gameObject.Find("Player1(Clone)");
+player2paddle = gameObject.Find("Player2(Clone)");
 }
 
-function OnCollisionEnter (collision: Collision) 
+function OnCollisionEnter (collision: Collision)
 	{
 	lastplayerhit = collision.gameObject.GetComponent(BallVariables).lastPlayerHit;
 
-	if (lastplayerhit == 1) 
+	if (lastplayerhit == 1)
 		{
-		Debug.Log("ADDS"); 
-		player2paddle.transform.localScale = new Vector3(1, 3, 1); 
-		yield StartCoroutine(resetsize());
+		Debug.Log("ADDS");
+		player2paddle.transform.localScale.y = 3;
+		yield StartCoroutine(resetsize(player2paddle));
 		};
-	if (lastplayerhit == 2) 
+	if (lastplayerhit == 2)
 		{
-		Debug.Log("ASDS"); 
-		player1paddle.transform.localScale = new Vector3(1, 3, 1); 
-		yield StartCoroutine(resetsize());
+		Debug.Log("ASDS");
+		player1paddle.transform.localScale.y = 3;
+		yield StartCoroutine(resetsize(player1paddle));
 		};
 	// transform.localScale = new Vector3(x, y, z);
 	// transform.localScale[1] = y;
@@ -32,10 +32,10 @@ function OnCollisionEnter (collision: Collision)
 	// Invoke("functionname", seconds);
 	}
 
-function resetsize ()
+function resetsize (paddle: GameObject)
 	{
 	Debug.Log("lolzfirst");
-	yield WaitForSeconds (2);
+	yield WaitForSeconds (6);
+	paddle.transform.localScale.y = 5;
 	Debug.Log("lolz");
 	}
-
