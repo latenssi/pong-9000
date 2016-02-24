@@ -7,14 +7,26 @@ private var powerUpDuration : int; // Seconds
 class ReverseMovementTimer extends System.ValueType {
   var endtime : float;
   var movement : PaddleMovement;
+  var reversed : boolean;
 
   function ReverseMovementTimer(paddle : GameObject) {
     this.movement = paddle.GetComponent(PaddleMovement);
+    this.reversed = false;
   }
 
   function start(duration : int) {
     this.endtime = Time.time + duration;
-    Debug.Log(this.movement.getSpeed());
+    if (!this.reversed) {
+      this.reversed = true;
+      this.movement.setSpeed(-this.movement.getSpeed());
+    }
+  }
+
+  function stop() {
+    if (this.reversed) {
+      this.reversed = false;
+      this.movement.setSpeed(-this.movement.getSpeed());
+    }
   }
 }
 
@@ -39,8 +51,11 @@ function OnCollisionEnter (collision : Collision) {
 
 function Update() {
   var now = Time.time;
-  var time1Left = player1Timer.endtime - now;
-  var time2Left = player2Timer.endtime - now;
-  if (time1Left > 0) {Debug.Log("Player 1 reverse movement timeleft: " + time1Left);}
-  if (time2Left > 0) {Debug.Log("Player 2 reverse movement timeleft: " + time2Left);}
+
+  if (player1Timer.reversed && (player1Timer.endtime - now) <= 0) {
+    player1Timer.stop();
+  }
+  if (player2Timer.reversed && (player2Timer.endtime - now) <= 0) {
+    player2Timer.stop();
+  }
 }
