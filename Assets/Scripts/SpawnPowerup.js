@@ -2,9 +2,11 @@
 var powerup1 : Transform;
 var powerup2 : Transform;
 var powerup3 : Transform;
+var powerup4 : Transform;
 var powerup1rarity : int;
 var powerup2rarity : int;
 var powerup3rarity : int;
+var powerup4rarity : int;
 public var repeatTimeMin : int;
 public var repeatTimeMax : int;
 private var nextPowerup : int;
@@ -28,6 +30,10 @@ function Update () {
 
     else if (randomNumber > powerup1rarity + powerup2rarity && powerup1rarity + powerup2rarity + powerup3rarity)
     {Instantiate(powerup3, gameObject.transform.position, powerup3.transform.rotation);}
+
+    else if (randomNumber > powerup1rarity + powerup2rarity + powerup3rarity
+      && powerup1rarity + powerup2rarity + powerup3rarity + powerup4rarity)
+    {Instantiate(powerup4, gameObject.transform.position, powerup4.transform.rotation);}
 
     else {Debug.Log("INCORRECT NUMBER");}
   	}
