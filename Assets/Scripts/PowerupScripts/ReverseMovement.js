@@ -2,7 +2,7 @@
 private var lastplayerhit : int;
 private var player1Timer : ReverseMovementTimer;
 private var player2Timer : ReverseMovementTimer;
-private var powerUpDuration : int; // Seconds
+public var powerUpDuration : int; // Seconds
 
 class ReverseMovementTimer extends System.ValueType {
   var endtime : float;
@@ -31,7 +31,7 @@ class ReverseMovementTimer extends System.ValueType {
 }
 
 function Start () {
-  powerUpDuration = 10;
+  //powerUpDuration = 10;
   player1Timer = new ReverseMovementTimer(gameObject.Find("Player1(Clone)"));
   player2Timer = new ReverseMovementTimer(gameObject.Find("Player2(Clone)"));
 }
