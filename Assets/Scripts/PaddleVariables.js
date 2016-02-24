@@ -1,4 +1,4 @@
 ﻿#pragma strict
 
 public var DefaultScale : float;
-public var VerticalAxis : String; //1 = x, 2 = y, 3 = z
+public var VerticalAxis : int; //1 = x, 3 = z, y = anything else
