@@ -36,5 +36,6 @@ function FixedUpdate () {
   if (Mathf.Abs(positionY) >= maxY) {
     Debug.Log("OVER BOARD");
     rb.velocity.y = rb.velocity.y * -1;
+    gameObject.transform.position.y = (positionY / Mathf.Abs(positionY)) * maxY;
   }
 }
