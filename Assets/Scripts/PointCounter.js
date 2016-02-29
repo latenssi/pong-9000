@@ -44,6 +44,10 @@ function pauseGame ()
 
 function restartGame ()
 {
-  Time.timeScale = 1.0F;
-  Application.LoadLevel("LV1");
+    Time.timeScale = 1.0F;
+
+    // GET RANDOM LEVEL
+
+    Debug.Log("RANDOM LEVEL");
+    Application.LoadLevel(Random.Range(1, Application.levelCount));
 }
