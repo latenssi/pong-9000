@@ -13,12 +13,11 @@ function Update () {
 
     if (startgrowtime > 0) {
         transform.localScale += new Vector3(0.1F, 0.1F, 0.1F) * startgrowmultiplier;
-
+    };
 
         // PASSIVE GROW
         //transform.localScale += new Vector3(0.01F, 0.01F, 0.01F) * startgrowmultiplier;
-        
-    };
+       
 
     //transform.localScale += new Vector3(-0.1F, -0.1F, -0.1F);
 }
